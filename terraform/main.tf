@@ -1,9 +1,9 @@
-module "dev" {
+module "qa" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "konfig-dev@tabnergc.com"
-    AccountName               = "dev-aft"
+    AccountEmail              = "konfig-qa@tabnergc.com"
+    AccountName               = "qa-aft"
     ManagedOrganizationalUnit = "aft-tabner"
     SSOUserEmail              = "tohid.mulani@tabnerglobal.com"
     SSOUserFirstName          = "Tohid"
@@ -11,17 +11,17 @@ module "dev" {
   }
 
   account_tags = {
-    "Environment" = "dev"
+    "Environment" = "qa"
   }
 
   change_management_parameters = {
     change_requested_by = "Tohid Mulani"
-    change_reason       = "Create AWS account for dev environment"
+    change_reason       = "Create AWS account for qa environment"
   }
 
   custom_fields = {
     group = "non-prod"
   }
 
-  account_customizations_name = "dev-aft"
+  account_customizations_name = "qa-aft"
 }
