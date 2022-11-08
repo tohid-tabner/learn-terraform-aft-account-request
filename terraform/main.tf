@@ -1,9 +1,9 @@
-module "qa" {
+module "stage" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "konfig-qa@tabnergc.com"
-    AccountName               = "qa-aft"
+    AccountEmail              = "konfig-stg@tabnergc.com"
+    AccountName               = "stage-aft"
     ManagedOrganizationalUnit = "aft-tabner"
     SSOUserEmail              = "tohid.mulani@tabnerglobal.com"
     SSOUserFirstName          = "Tohid"
@@ -11,17 +11,17 @@ module "qa" {
   }
 
   account_tags = {
-    "Environment" = "qa"
+    "Environment" = "stage"
   }
 
   change_management_parameters = {
     change_requested_by = "Tohid Mulani"
-    change_reason       = "Create AWS account for qa environment"
+    change_reason       = "Create AWS account for stage environment"
   }
 
   custom_fields = {
     group = "non-prod"
   }
 
-  account_customizations_name = "qa-aft"
+  account_customizations_name = "stage-aft"
 }
